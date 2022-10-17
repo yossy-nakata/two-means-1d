@@ -85,7 +85,7 @@ impl TwoMeans1D {
             // 更新結果に変化がない場合は脱出
             let mut is_stop = true;
             for k in 0..cluster.len() {
-                if (cluster[k] - prev_cluster[k]).abs() < f64::EPSILON {
+                if (cluster[k] - prev_cluster[k]).abs() > f64::EPSILON {
                     is_stop = false;
                     break;
                 }
